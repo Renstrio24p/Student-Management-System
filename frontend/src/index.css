@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.active {
+  @apply text-white font-semibold;
+}
+
+nav a {
+  @apply hover:text-gray-400;
+}
+
+/* Navigation styles */
+nav {
+  @apply transition-all duration-300 ease-in-out;
+  /* General transition for the nav */
+}
+
+.open {
+  @apply max-h-[500px] overflow-hidden p-3 transition-all duration-300 ease-in-out transform translate-y-[0];
+  /* Open state */
+}
+
+.closed {
+  @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
+  /* Closed state */
+}
+
+@layer utilities {
+  .circle {
+    @apply w-4 h-4 mx-2 bg-orange-700 rounded-full animate-bounce;
+  }
+
+  .circle:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .circle:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
